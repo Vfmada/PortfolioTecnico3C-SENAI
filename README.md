@@ -1,4 +1,4 @@
-# PortfolioTecnico3C-SENAI
+# Sobre Mim
 Portfólio para o curso técnico integrado de Análise e Desenvolvimento de Sistemas - SENAI
 
 Dados:
