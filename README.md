@@ -20,3 +20,8 @@ Pontos fortes:
 - Persistência
 - Responsabilidade
 - Paciência
+
+Trabalhos:
+- Último trabalho BD (Tema Livre): https://github.com/Vfmada/PortfolioTecnico3C-SENAI/tree/main/Banco_de_Dados/trabalhobd_lol_1207
+- Cassino Jorge's: https://github.com/Vfmada/PortfolioTecnico3C-SENAI/tree/main/Desenvolvimento_Sistemas/cassinojorges
+- App Cadastro + Moda/Média/Mediana: https://github.com/Vfmada/PortfolioTecnico3C-SENAI/tree/main/Programacao_de_aplicativos/appmodamediamediana
