@@ -118,7 +118,212 @@ public class MenuJogos extends javax.swing.JFrame {
 
     private void jogo21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jogo21ActionPerformed
         if(fichasRestantes >= 10){
-            //A fazer
+            int jorge_jogadas = 0;
+            int jogador_jogadas = 0;
+            int jogador_somou = 0;
+            int jorge_somou = 0;
+            int jogador_carta1 = gerador.nextInt(10)+1;
+            int jogador_carta2 = gerador.nextInt(10)+1;
+            int jogador_carta3 = gerador.nextInt(10)+1;
+            int jorge_carta1 = gerador.nextInt(10)+1;
+            int jorge_carta2 = gerador.nextInt(10)+1;
+            int jorge_carta3 = gerador.nextInt(10)+1;
+            int soma_da_mesa = 0;
+            
+            int aposta = Integer.parseInt(JOptionPane.showInputDialog("Digite quantos jorges vai apostar: "));
+            if(aposta >= 10){
+                if(fichasRestantes >= aposta){
+                    int jogaprimeiro = gerador.nextInt(2);
+                    if(jogaprimeiro == 0){
+                        JOptionPane.showMessageDialog(null, "Por sorteio, Jorge joga primeiro");
+                        while(soma_da_mesa < 21){
+                            JOptionPane.showMessageDialog(null, "Vez do Jorge");
+                            int escolhe_carta_descartar = gerador.nextInt(3);
+                            if(escolhe_carta_descartar == 0){
+                                JOptionPane.showMessageDialog(null, "Jorge adicionou " + jorge_carta1 + " à mesa.");
+                                jorge_somou = jorge_carta1;
+                                jogador_carta1 = gerador.nextInt(10)+1;
+                            }
+                            else if(escolhe_carta_descartar == 1){
+                                JOptionPane.showMessageDialog(null, "Jorge adicionou " + jorge_carta2 + " à mesa.");
+                                jorge_somou = jorge_carta2;
+                                jogador_carta2 = gerador.nextInt(10)+1;
+                            }
+                            else if(escolhe_carta_descartar == 2){
+                                JOptionPane.showMessageDialog(null, "Jorge adicionou " + jorge_carta3 + " à mesa.");
+                                jorge_somou = jorge_carta3;
+                                jogador_carta3 = gerador.nextInt(10)+1;
+                            }
+                            else{
+                                JOptionPane.showMessageDialog(null, "Erro.");
+                                break;
+                            }
+                            soma_da_mesa = soma_da_mesa + jorge_somou;
+                            jorge_jogadas++;
+                            
+                            if(soma_da_mesa < 21){
+                                JOptionPane.showMessageDialog(null, "Sua vez");
+                                jogador_somou = Integer.parseInt(JOptionPane.showInputDialog("Os valores de suas cartas são: \n1°- " + jogador_carta1 + "\n2°- " + jogador_carta2 + "\n3°- " + jogador_carta3 + ". \n\nInsira a posição da carta que quer descartar e somar à mesa: "));
+                                if(jogador_somou == 1){
+                                    JOptionPane.showMessageDialog(null, "Você adicionou " + jogador_carta1 + " à mesa.");
+                                    soma_da_mesa = soma_da_mesa + jogador_carta1;
+                                    jogador_carta1 = gerador.nextInt(10)+1;
+                                    JOptionPane.showMessageDialog(null, "Você comprou uma carta de valor " + jogador_carta1 + " do monte.");
+                                }
+                                else if(jogador_somou == 2){
+                                    JOptionPane.showMessageDialog(null, "Você adicionou " + jogador_carta2 + " à mesa.");
+                                    soma_da_mesa = soma_da_mesa + jogador_carta2;
+                                    jogador_carta2 = gerador.nextInt(10)+1;
+                                    JOptionPane.showMessageDialog(null, "Você comprou uma carta de valor " + jogador_carta2 + " do monte.");
+                                }
+                                else if(jogador_somou == 3){
+                                    JOptionPane.showMessageDialog(null, "Você adicionou " + jogador_carta3 + " à mesa.");
+                                    soma_da_mesa = soma_da_mesa + jogador_carta3;
+                                    jogador_carta3 = gerador.nextInt(10)+1;
+                                    JOptionPane.showMessageDialog(null, "Você comprou uma carta de valor " + jogador_carta3 + " do monte.");
+                                }
+                                else{
+                                    JOptionPane.showMessageDialog(null, "Você inseriu um valor inválido.");
+                                    break;
+                                }
+                                jogador_jogadas++;
+                            }                        
+                        }
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(null, "Por sorteio, você joga primeiro");
+                        while(soma_da_mesa < 21){
+                            JOptionPane.showMessageDialog(null, "Sua vez");
+                                jogador_somou = Integer.parseInt(JOptionPane.showInputDialog("Os valores de suas cartas são: \n1°- " + jogador_carta1 + "\n2°- " + jogador_carta2 + "\n3°- " + jogador_carta3 + ". \n\nInsira a posição da carta que quer descartar e somar à mesa: "));
+                                if(jogador_somou == 1){
+                                    JOptionPane.showMessageDialog(null, "Você adicionou " + jogador_carta1 + " à mesa.");
+                                    soma_da_mesa = soma_da_mesa + jogador_carta1;
+                                    jogador_carta1 = gerador.nextInt(10)+1;
+                                    JOptionPane.showMessageDialog(null, "Você comprou uma carta de valor " + jogador_carta1 + " do monte.");
+                                }
+                                else if(jogador_somou == 2){
+                                    JOptionPane.showMessageDialog(null, "Você adicionou " + jogador_carta2 + " à mesa.");
+                                    soma_da_mesa = soma_da_mesa + jogador_carta2;
+                                    jogador_carta2 = gerador.nextInt(10)+1;
+                                    JOptionPane.showMessageDialog(null, "Você comprou uma carta de valor " + jogador_carta2 + " do monte.");
+                                }
+                                else if(jogador_somou == 3){
+                                    JOptionPane.showMessageDialog(null, "Você adicionou " + jogador_carta3 + " à mesa.");
+                                    soma_da_mesa = soma_da_mesa + jogador_carta3;
+                                    jogador_carta3 = gerador.nextInt(10)+1;
+                                    JOptionPane.showMessageDialog(null, "Você comprou uma carta de valor " + jogador_carta3 + " do monte.");
+                                }
+                                else{
+                                    JOptionPane.showMessageDialog(null, "Você inseriu um valor inválido.");
+                                    break;
+                                }
+                                jogador_jogadas++;
+                            
+                            if(soma_da_mesa < 21){
+                                JOptionPane.showMessageDialog(null, "Vez do Jorge");
+                                int escolhe_carta_descartar = gerador.nextInt(3);
+                                if(escolhe_carta_descartar == 0){
+                                    JOptionPane.showMessageDialog(null, "Jorge adicionou " + jorge_carta1 + " à mesa.");
+                                    jorge_somou = jorge_carta1;
+                                    jogador_carta1 = gerador.nextInt(10)+1;
+                                }
+                                else if(escolhe_carta_descartar == 1){
+                                    JOptionPane.showMessageDialog(null, "Jorge adicionou " + jorge_carta2 + " à mesa.");
+                                    jorge_somou = jorge_carta2;
+                                    jogador_carta2 = gerador.nextInt(10)+1;
+                                }
+                                else if(escolhe_carta_descartar == 2){
+                                    JOptionPane.showMessageDialog(null, "Jorge adicionou " + jorge_carta3 + " à mesa.");
+                                    jorge_somou = jorge_carta3;
+                                    jogador_carta3 = gerador.nextInt(10)+1;
+                                }
+                                else{
+                                    JOptionPane.showMessageDialog(null, "Erro.");
+                                    break;
+                                }
+                                soma_da_mesa = soma_da_mesa + jorge_somou;
+                                jorge_jogadas++;
+                            }                        
+                        }
+                    }
+                    if(soma_da_mesa == 21){
+                        if(jorge_jogadas > jogador_jogadas){
+                            JOptionPane.showMessageDialog(null, "Jorge ganhou. Soma das cartas na mesa: " + soma_da_mesa);
+                            fichasRestantes = fichasRestantes - aposta;
+                        }
+                        else if(jogador_jogadas > jorge_jogadas){
+                            JOptionPane.showMessageDialog(null, "Parabéns, você ganhou! Soma das cartas na mesa: " + soma_da_mesa + ". Como resultado, ganhou o dobro do valor de sua aposta.");
+                            fichasRestantes = fichasRestantes + aposta*2;
+                        }
+                        else{
+                            if(jogaprimeiro == 0){
+                                if(jogador_jogadas == jorge_jogadas) {
+                                    JOptionPane.showMessageDialog(null, "Parabéns, você ganhou! Soma das cartas na mesa: " + soma_da_mesa + ". Como resultado, ganhou o dobro do valor de sua aposta.");
+                                    fichasRestantes = fichasRestantes + aposta*2;
+                                }
+                                else{
+                                    JOptionPane.showMessageDialog(null, "Ocorreu um erro ao definir o vencedor. Soma das cartas na mesa: " + soma_da_mesa + " Você não perdeu o valor apostado.");
+                                }
+                            }
+                            else if(jogaprimeiro == 1){
+                                if(jorge_jogadas == jogador_jogadas) {
+                                    JOptionPane.showMessageDialog(null, "Jorge ganhou. Soma das cartas na mesa: " + soma_da_mesa);
+                                    fichasRestantes = fichasRestantes - aposta;
+                                }
+                                else{
+                                    JOptionPane.showMessageDialog(null, "Ocorreu um erro ao definir o vencedor. Soma das cartas na mesa: " + soma_da_mesa + " Você não perdeu o valor apostado.");
+                                }
+                            }
+                            else{
+                                JOptionPane.showMessageDialog(null, "Ocorreu um erro ao definir o vencedor. Soma das cartas na mesa: " + soma_da_mesa + " Você não perdeu o valor apostado.");
+                            }
+                        }
+                    }
+                    else if(soma_da_mesa > 21){
+                        if(jogador_jogadas > jorge_jogadas) {
+                            JOptionPane.showMessageDialog(null, "Jorge ganhou. Soma das cartas na mesa: " + soma_da_mesa);
+                            fichasRestantes = fichasRestantes - aposta;
+                        }
+                        else if(jorge_jogadas > jogador_jogadas){
+                            JOptionPane.showMessageDialog(null, "Parabéns, você ganhou! Soma das cartas na mesa: " + soma_da_mesa + ". Como resultado, ganhou o dobro do valor de sua aposta.");
+                            fichasRestantes = fichasRestantes + aposta*2;
+                        }
+                        else{
+                            if(jogaprimeiro == 0){
+                                if(jogador_jogadas == jorge_jogadas) {
+                                    JOptionPane.showMessageDialog(null, "Jorge ganhou. Soma das cartas na mesa: " + soma_da_mesa);
+                                    fichasRestantes = fichasRestantes - aposta;
+                                }
+                                else{
+                                    JOptionPane.showMessageDialog(null, "Ocorreu um erro ao definir o vencedor. Soma das cartas na mesa: " + soma_da_mesa + " Você não perdeu o valor apostado.");
+                                }
+                            }
+                            else if(jogaprimeiro == 1){
+                                if(jorge_jogadas == jogador_jogadas) {
+                                    JOptionPane.showMessageDialog(null, "Parabéns, você ganhou! Soma das cartas na mesa: " + soma_da_mesa + ". Como resultado, ganhou o dobro do valor de sua aposta.");
+                                    fichasRestantes = fichasRestantes + aposta*2;
+                                }
+                                else{
+                                    JOptionPane.showMessageDialog(null, "Ocorreu um erro ao definir o vencedor. Soma das cartas na mesa: " + soma_da_mesa + " Você não perdeu o valor apostado.");
+                                }
+                            }
+                            else{
+                                JOptionPane.showMessageDialog(null, "Ocorreu um erro ao definir o vencedor. Soma das cartas na mesa: " + soma_da_mesa + " Você não perdeu o valor apostado.");
+                            }
+                        }
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(null, "Ocorreu um erro ao definir o vencedor. Soma das cartas na mesa: " + soma_da_mesa + " Você não perdeu o valor apostado.");
+                    }
+                    iniciaFichas(fichasRestantes);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Fichas insuficientes para este valor de aposta.");
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Valor de aposta inválido");
+            }
         }
         else{
             JOptionPane.showMessageDialog(null, "Fichas insuficientes, caso queira continuar jogando, volte para o Cassino.");
@@ -130,6 +335,7 @@ public class MenuJogos extends javax.swing.JFrame {
             int dado1 = gerador.nextInt(6)+1;
             int dado2 = gerador.nextInt(6)+1;
             int somaCerta = dado1+dado2;
+            
             int aposta = Integer.parseInt(JOptionPane.showInputDialog("Digite quantos jorges vai apostar: "));
             if(aposta >= 10){
                 if(fichasRestantes >= aposta){
