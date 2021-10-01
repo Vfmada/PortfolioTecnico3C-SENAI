@@ -1,5 +1,5 @@
 # Sobre Mim
-*Portfólio para o Curso Técnico Integrado de Análise e Desenvolvimento de Sistemas - SENAI
+*Portfólio para o Curso Técnico Integrado de Análise e Desenvolvimento de Sistemas pelo SESI-SENAI
 
 Dados:
 - Vinícius Faraco Madalena
